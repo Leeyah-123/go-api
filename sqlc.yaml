@@ -1,0 +1,22 @@
+version: '2'
+sql:
+  - engine: 'postgresql'
+    queries: 'platform/queries'
+    schema: 'platform/migrations'
+    gen:
+      go:
+        package: 'postgres'
+        out: 'postgres'
+        emit_json_tags: true
+        emit_empty_slices: true
+# overrides:
+#   go:
+#     overrides:
+#       # override columns
+#       - db_type: ''
+#         nullable: true
+#         engine: 'postgresql'
+#         go_type:
+#           import: 'gokg.in/guregu/null.v4'
+#           package: 'null'
+#           type: 'uuid'
